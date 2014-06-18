@@ -1,4 +1,12 @@
 (function () {
+  
+  Revolver.setSelectorEngine(function(selector, root) {
+    if (root === void 0) {
+      root = document;
+    }
+    return Slick.search(root, selector);
+  });
+  
   var METHOD = 'revolver';
 
   Element.implement(METHOD, function(options) {
